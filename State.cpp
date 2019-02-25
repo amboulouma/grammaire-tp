@@ -29,8 +29,10 @@ State8::State8() : State("I8") {}
 
 State9::State9() : State("I9") {}
 
-bool State0::transition(Automate &automate, Symbole *s) {
-  switch (*s) {
+bool State0::transition(Automate &automate, Symbole *s) 
+{
+  switch (*s) 
+  {
   case EXPR:
     automate.decalage(s, new State1);
     break;
@@ -42,15 +44,16 @@ bool State0::transition(Automate &automate, Symbole *s) {
     break;
   default:
     automate.decalage(new Symbole(ERREUR), NULL);
-    return false;
+    return true;
   }
   return false;
 }
 
 
-bool State1::transition(Automate &automate, Symbole *s) {
-
-  switch (*s) {
+bool State1::transition(Automate &automate, Symbole *s) 
+{
+  switch (*s) 
+  {
   case PLUS:
     automate.decalage(s, new State4);
     break;
@@ -62,15 +65,16 @@ bool State1::transition(Automate &automate, Symbole *s) {
     break;
   default:
     automate.decalage(new Symbole(ERREUR), NULL);
-    return false;
+    return true;
   }
   return false;
 }
 
 
-bool State2::transition(Automate &automate, Symbole *s) {
-
-  switch (*s) {
+bool State2::transition(Automate &automate, Symbole *s) 
+{
+  switch (*s) 
+  {
   case INT:
     automate.decalage(s, new State3);
     break;
@@ -82,37 +86,39 @@ bool State2::transition(Automate &automate, Symbole *s) {
     break;
   default:
     automate.decalage(new Symbole(ERREUR), NULL);
-    return false;
+    return true;
   }
   return false;
 }
 
 
-bool State3::transition(Automate &automate, Symbole *s) {
-
-  switch (*s) {
+bool State3::transition(Automate &automate, Symbole *s) 
+{
+  switch (*s) 
+  {
   case PLUS:
-    automate.reduction(1, new Symbole(PLUS));
+    automate.reduction(1, new Plus);
     break;
   case MULT:
-    automate.reduction(1, new Symbole(MULT));
+    automate.reduction(1, new Mult);
     break;
   case CLOSEPAR:
-    automate.reduction(1, new Symbole(CLOSEPAR));
+    automate.reduction(1, new Closepar);
     break;
   case FIN:
-    automate.reduction(1, new Symbole(FIN));
+    automate.reduction(1, new Fin);
     break;
   default:
     automate.decalage(new Symbole(ERREUR), NULL);
-    return false;
+    return true;
   }
   return false;
 }
 
-bool State4::transition(Automate &automate, Symbole *s) {
-
-  switch (*s) {
+bool State4::transition(Automate &automate, Symbole *s) 
+{
+  switch (*s) 
+  {
   case INT:
     automate.decalage(s, new State3);
     break;
@@ -124,14 +130,15 @@ bool State4::transition(Automate &automate, Symbole *s) {
     break;
   default:
     automate.decalage(new Symbole(ERREUR), NULL);
-    return false;
+    return true;
   }
   return false;
 }
 
-bool State5::transition(Automate &automate, Symbole *s) {
-
-  switch (*s) {
+bool State5::transition(Automate &automate, Symbole *s) 
+{
+  switch (*s) 
+  {
   case INT:
     automate.decalage(s, new State3);
     break;
@@ -143,14 +150,15 @@ bool State5::transition(Automate &automate, Symbole *s) {
     break;
   default:
     automate.decalage(new Symbole(ERREUR), NULL);
-    return false;
+    return true;
   }
   return false;
 }
 
-bool State6::transition(Automate &automate, Symbole *s) {
-
-  switch (*s) {
+bool State6::transition(Automate &automate, Symbole *s) 
+{
+  switch (*s) 
+  {
   case PLUS:
     automate.decalage(s, new State4);
     break;
@@ -162,14 +170,15 @@ bool State6::transition(Automate &automate, Symbole *s) {
     break;
   default:
     automate.decalage(new Symbole(ERREUR), NULL);
-    return false;
+    return true;
   }
   return false;
 }
 
-bool State7::transition(Automate &automate, Symbole *s) {
-
-  switch (*s) {
+bool State7::transition(Automate &automate, Symbole *s) 
+{
+  switch (*s) 
+  {
   case PLUS:
     automate.reduction(3, new Plus);
     break;
@@ -184,14 +193,15 @@ bool State7::transition(Automate &automate, Symbole *s) {
     break;
   default:
     automate.decalage(new Symbole(ERREUR), NULL);
-    return false;
+    return true;
   }
   return false;
 }
 
-bool State8::transition(Automate &automate, Symbole *s) {
-
-  switch (*s) {
+bool State8::transition(Automate &automate, Symbole *s) 
+{
+  switch (*s) 
+  {
   case PLUS:
     automate.reduction(3, new Plus);
     break;
@@ -206,14 +216,15 @@ bool State8::transition(Automate &automate, Symbole *s) {
     break;
   default:
     automate.decalage(new Symbole(ERREUR), NULL);
-    return false;
+    return true;
   }
   return false;
 }
 
-bool State9::transition(Automate &automate, Symbole *s) {
-
-  switch (*s) {
+bool State9::transition(Automate &automate, Symbole *s) 
+{
+  switch (*s) 
+  {
   case PLUS:
     automate.reduction(3, new Plus);
     break;
@@ -228,7 +239,7 @@ bool State9::transition(Automate &automate, Symbole *s) {
     break;
   default:
     automate.decalage(new Symbole(ERREUR), NULL);
-    return false;
+    return true;
   }
   return false;
 }

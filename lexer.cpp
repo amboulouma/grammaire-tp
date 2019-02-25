@@ -2,7 +2,6 @@
 
 Symbole * Lexer::Consulter() {
    if (!tampon) {
-
       if (tete==flux.length())
          tampon = new Symbole(FIN);
       else
@@ -45,7 +44,17 @@ Symbole * Lexer::Consulter() {
    return tampon;
 }
 
-void Lexer::Avancer() {
+void Lexer::Avancer() 
+{
    tampon = nullptr;
 }
 
+void Lexer::addSymbole(Symbole *s) 
+{
+   switch (*s) 
+   {
+      case CLOSEPAR:
+         tampon = s;
+         break;
+   }
+}

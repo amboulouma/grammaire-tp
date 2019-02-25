@@ -13,7 +13,7 @@ public:
   Automate(string flux);
   void decalage(Symbole *s, State *e);
   void reduction(int n, Symbole *s);
-  void run();
+  void analyse();
 
 protected:
   stack<Symbole *> symbolstack;
