@@ -1,3 +1,4 @@
 lexer.o
 main.o
 symbole.o
+lexer-exec

@@ -44,9 +44,9 @@ bool State0::transition(Automate &automate, Symbole *s)
     break;
   default:
     automate.decalage(new Symbole(ERREUR), NULL);
-    return true;
+    return false;
   }
-  return false;
+  return true;
 }
 
 
@@ -61,13 +61,13 @@ bool State1::transition(Automate &automate, Symbole *s)
     automate.decalage(s, new State5);
     break;
   case FIN:
-    return true;
+    return false;
     break;
   default:
     automate.decalage(new Symbole(ERREUR), NULL);
-    return true;
+    return false;
   }
-  return false;
+  return true;
 }
 
 
@@ -86,9 +86,9 @@ bool State2::transition(Automate &automate, Symbole *s)
     break;
   default:
     automate.decalage(new Symbole(ERREUR), NULL);
-    return true;
+    return false;
   }
-  return false;
+  return true;
 }
 
 
@@ -110,9 +110,9 @@ bool State3::transition(Automate &automate, Symbole *s)
     break;
   default:
     automate.decalage(new Symbole(ERREUR), NULL);
-    return true;
+    return false;
   }
-  return false;
+  return true;
 }
 
 bool State4::transition(Automate &automate, Symbole *s) 
@@ -130,9 +130,9 @@ bool State4::transition(Automate &automate, Symbole *s)
     break;
   default:
     automate.decalage(new Symbole(ERREUR), NULL);
-    return true;
+    return false;
   }
-  return false;
+  return true;
 }
 
 bool State5::transition(Automate &automate, Symbole *s) 
@@ -150,9 +150,9 @@ bool State5::transition(Automate &automate, Symbole *s)
     break;
   default:
     automate.decalage(new Symbole(ERREUR), NULL);
-    return true;
+    return false;
   }
-  return false;
+  return true;
 }
 
 bool State6::transition(Automate &automate, Symbole *s) 
@@ -170,9 +170,9 @@ bool State6::transition(Automate &automate, Symbole *s)
     break;
   default:
     automate.decalage(new Symbole(ERREUR), NULL);
-    return true;
+    return false;
   }
-  return false;
+  return true;
 }
 
 bool State7::transition(Automate &automate, Symbole *s) 
@@ -193,9 +193,9 @@ bool State7::transition(Automate &automate, Symbole *s)
     break;
   default:
     automate.decalage(new Symbole(ERREUR), NULL);
-    return true;
+    return false;
   }
-  return false;
+  return true;
 }
 
 bool State8::transition(Automate &automate, Symbole *s) 
@@ -216,9 +216,9 @@ bool State8::transition(Automate &automate, Symbole *s)
     break;
   default:
     automate.decalage(new Symbole(ERREUR), NULL);
-    return true;
+    return false;
   }
-  return false;
+  return true;
 }
 
 bool State9::transition(Automate &automate, Symbole *s) 
@@ -239,7 +239,7 @@ bool State9::transition(Automate &automate, Symbole *s)
     break;
   default:
     automate.decalage(new Symbole(ERREUR), NULL);
-    return true;
+    return false;
   }
-  return false;
+  return true;
 }

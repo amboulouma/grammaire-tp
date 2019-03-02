@@ -34,7 +34,7 @@ void Automate::reduction(int n, Symbole *s)
   } 
   else if (n == 3) 
   {
-    if (*aEnlever.top() == CLOSEPAR || *aEnlever.top() == FIN) 
+    if (*aEnlever.top() == OPENPAR) 
     {
       aEnlever.pop();
       val = aEnlever.top()->getValue();
@@ -48,7 +48,7 @@ void Automate::reduction(int n, Symbole *s)
         aEnlever.pop();
         val = val * aEnlever.top()->getValue();
       } 
-      else if (*aEnlever.top() == PLUS) 
+      else
       {
         aEnlever.pop();
         val = val + aEnlever.top()->getValue();
@@ -62,8 +62,8 @@ void Automate::reduction(int n, Symbole *s)
 
 void Automate::analyse() 
 {
-  bool nextStat = false;
-  while (!nextStat) 
+  bool nextStat = true;
+  while (nextStat) 
   {
     Symbole *s = lexer->Consulter();
     lexer->Avancer();
@@ -72,11 +72,11 @@ void Automate::analyse()
   if (*symbolstack.top() != ERREUR)
   {
     int result = symbolstack.top()->getValue();
-    cout << "La syntaxe correct" << endl;
+    cout << "La syntaxe correct." << endl;
     cout << "Le résultat est: " << result << endl;
   } 
   else 
   {
-    cout << "La syntaxe n'est pas reconnu à cause d'un caractere invalide" << endl;
+    cout << "La syntaxe n'est pas reconnu à cause d'un caractere invalide." << endl;
   }
 }
